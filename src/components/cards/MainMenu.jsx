@@ -37,139 +37,142 @@ export default function MainMenu() {
 
  
     return (
-        <>
-        <div className="w-full h-full flex gap-4 items-center px-6 overflow-auto">
-            {/* Grupo 1 */}
-            <div className="flex flex-col gap-1">
-                {/* <p className="text-xs">Informações do Processo</p> */}
-                <div className="flex gap-2">
-                    <IconButton
-                        icon={faFileContract}
-                        name="Home"
-                        color="#1A4480"
-                        textColor='#fff'
-                    />
-                    <IconButton
-                        icon={faCalendarDays}
-                        name="Profile"
-                        color="#1A4480"
-                        textColor='#fff'
-                    />
-                    <IconButton
-                        icon={faInfoCircle}
-                        name="Settings"
-                        color="#1A4480"
-                        textColor='#fff'
-                    />
-                    <IconButton
-                        icon={faUser}
-                        name="Notifications"
-                        color="#1A4480"
-                        textColor='#fff'
-                    />
-                    <IconButton
-                        icon={faLock}
-                        name="Messages"
-                        color="#1A4480"
-                        textColor='#fff'
-                    />
-                </div>
-            </div>
-            {/* Grupo 2 */}
-            <div className="flex flex-col gap-1">
-                {/* <p className="text-xs">Ações do Processo</p> */}
-                <div className="flex space-x-2">
-                    <IconButton
-                        icon={faArrowRight}
-                        name="Analytics"
-                        color="#0050D8"
-                    />
-                    <IconButton
-                        icon={faArrowUp}
-                        name="Reports"
-                        color="#0050D8"
-                    />
-                    <IconButton
-                        icon={faPeopleArrows}
-                        name="Tasks"
-                        color="#0050D8"
-                    />
-                    <IconButton
-                        icon={faDownload}
-                        name="Feedback"
-                        color="#0050D8"
-                    />
-                    <IconButton
-                        icon={faFile}
-                        name="Help"
-                        color="#0050D8"
-                    />
-                </div>
-            </div>
-            {/* Grupo 3 */}
-            <div className="flex flex-col gap-1">
-                {/* <p className="text-xs">Ações dos Documentos</p> */}
-                <div className="flex gap-2">
-                    <IconButton
-                        icon={faFileContract}
-                        name="Home"
-                        color="#2672DE"
-                        textColor='#fff'
-                    />
-                    <IconButton
-                        icon={faCalendarDays}
-                        name="Profile"
-                        color="#2672DE"
-                        textColor='#fff'
-                    />
-                    <IconButton
-                        icon={faInfoCircle}
-                        name="Settings"
-                        color="#2672DE"
-                        textColor='#fff'
-                    />
-                    <IconButton
-                        icon={faUser}
-                        name="Notifications"
-                        color="#2672DE"
-                        textColor='#fff'
-                    />
-                    <IconButton
-                        icon={faLock}
-                        name="Messages"
-                        color="#2672DE"
-                        textColor='#fff'
-                    />
-                </div>
-            </div>
-            {/* Grupo 4 */}
-            <div className="flex flex-col gap-1">
-                {/* <p className="text-xs">Favoritos</p> */}
-                <div className="flex space-x-1">
-                    {group3Items.map((item, index) => (
+        <div className="w-full h-full flex items-center justify-between p-4">
+            <div className="flex gap-6 items-center overflow-auto">
+                {/* Grupo 1 */}
+                <div className="flex flex-col">
+                    {/* <p className="text-xs">Informações do Processo</p> */}
+                    <div className="flex space-x-1">
                         <IconButton
-                            key={index}
-                            letter={item.letter}
-                            name={item.name}
-                            color={item.color} // Customize the color if needed
-                            textColor="#3D4551"
+                            icon={faFileContract}
+                            name="Home"
+                            color="#1A4480"
+                            textColor='#fff'
                         />
-                    ))}
-                    <OutlinedIconButton
-                        icon={faBars}
-                        name="Profile"
-                        onClick={toggleMenu}
-                        textColor='#1A4480'
-                    />
+                        <IconButton
+                            icon={faCalendarDays}
+                            name="Profile"
+                            color="#1A4480"
+                            textColor='#fff'
+                        />
+                        <IconButton
+                            icon={faInfoCircle}
+                            name="Settings"
+                            color="#1A4480"
+                            textColor='#fff'
+                        />
+                        <IconButton
+                            icon={faUser}
+                            name="Notifications"
+                            color="#1A4480"
+                            textColor='#fff'
+                        />
+                        <IconButton
+                            icon={faLock}
+                            name="Messages"
+                            color="#1A4480"
+                            textColor='#fff'
+                        />
+                    </div>
                 </div>
+                {/* Grupo 2 */}
+                <div className="flex flex-col">
+                    {/* <p className="text-xs">Ações do Processo</p> */}
+                    <div className="flex space-x-1">
+                        <IconButton
+                            icon={faArrowRight}
+                            name="Analytics"
+                            color="#0050D8"
+                        />
+                        <IconButton
+                            icon={faArrowUp}
+                            name="Reports"
+                            color="#0050D8"
+                        />
+                        <IconButton
+                            icon={faPeopleArrows}
+                            name="Tasks"
+                            color="#0050D8"
+                        />
+                        <IconButton
+                            icon={faDownload}
+                            name="Feedback"
+                            color="#0050D8"
+                        />
+                        <IconButton
+                            icon={faFile}
+                            name="Help"
+                            color="#0050D8"
+                        />
+                    </div>
+                </div>
+                {/* Grupo 3 */}
+                <div className="flex flex-col">
+                    {/* <p className="text-xs">Ações dos Documentos</p> */}
+                    <div className="flex space-x-1">
+                        <IconButton
+                            icon={faFileContract}
+                            name="Home"
+                            color="#2672DE"
+                            textColor='#fff'
+                        />
+                        <IconButton
+                            icon={faCalendarDays}
+                            name="Profile"
+                            color="#2672DE"
+                            textColor='#fff'
+                        />
+                        <IconButton
+                            icon={faInfoCircle}
+                            name="Settings"
+                            color="#2672DE"
+                            textColor='#fff'
+                        />
+                        <IconButton
+                            icon={faUser}
+                            name="Notifications"
+                            color="#2672DE"
+                            textColor='#fff'
+                        />
+                        <IconButton
+                            icon={faLock}
+                            name="Messages"
+                            color="#2672DE"
+                            textColor='#fff'
+                        />
+                    </div>
+                </div>
+                {/* Grupo 4 */}
+                
             </div>
-            
+            <div className="flex flex-col grow ms-6">
+                <div className="flex justify-between">
+                    {/* <p className="text-xs">Favoritos</p> */}
+                    <div className="flex space-x-1">
+                        {group3Items.map((item, index) => (
+                            <IconButton
+                                key={index}
+                                letter={item.letter}
+                                name={item.name}
+                                color={item.color} // Customize the color if needed
+                                textColor="#3D4551"
+                            />
+                        ))}
+                        </div>
+                        <OutlinedIconButton
+                            icon={faBars}
+                            name="Profile"
+                            onClick={toggleMenu}
+                            textColor='#1A4480'
+                        />
+                    </div>
+
+            </div>
+            <OverlayMenu
+                isOpen={isMenuOpen}
+                onClose={closeMenu}
+                onAddItemToGroup3={addItemToGroup3} // Pass function to add/remove items
+            />
         </div>
-        <OverlayMenu
-        isOpen={isMenuOpen}
-        onClose={closeMenu}
-        onAddItemToGroup3={addItemToGroup3} // Pass function to add/remove items
-    />
-    </>
     )
 }

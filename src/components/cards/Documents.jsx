@@ -683,9 +683,9 @@ const ChronologicalView = () => {
     <div className="rounded-lg overflow-hidden flex flex-col h-full w-full">
       <div className='pt-4 px-4 border-b border-[#EDEFF0]'>
         <div className="flex justify-between items-center mb-4">
-        <div className="mb-2">
+        
           {viewMode === 'tree' && (
-            <div className="mt-4 flex justify-between text-sm gap-4">
+            <div className="items-center flex justify-between text-xs gap-4">
 
               <button
                 className="text-blue-500 underline hover:text-blue-700"
@@ -702,7 +702,7 @@ const ChronologicalView = () => {
             </div>
           )}
           {viewMode === 'chronological' && (
-            <div className="mt-4 flex justify-between text-sm gap-4">
+            <div className="items-center flex justify-between text-xs gap-4">
 
               <button
                 className="text-blue-500 underline hover:text-blue-700"
@@ -718,7 +718,7 @@ const ChronologicalView = () => {
               </button>
             </div>
           )}
-        </div>
+       
           {/* <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2> */}
         
           <div className="flex items-center space-x-1 mt-1">
@@ -748,45 +748,48 @@ const ChronologicalView = () => {
       </div>
 
       {/* Document List */}
-      <div className="p-4 rounded-md scroll-smooth overflow-y-auto h-auto grow overflow-x-">
-        {viewMode === 'tree' ? (
-          <ul>
-            {documents.map((doc) => (
-              <li key={doc.id} className="mb-2">
-                <div className="flex items-center">
-                  <button
-                    onClick={() => toggleExpand(doc.id)}
-                    className="mr-1.5"
-                  >
-                    <FontAwesomeIcon
-                      icon={
-                        expandedParents[doc.id] ? faChevronDown : faChevronRight
-                      }
-                      className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
-                    />
-                  </button>
-                  <input
-                    type="checkbox"
-                    checked={selectedDocuments.includes(doc.id)}
-                    onChange={() => handleCheckboxChange(doc.id)}
-                    className="mr-1.5"
-                  />
-                  <div
-                    className="text-sm text-[#3D4551] hover:underline cursor-pointer whitespace-nowrap"
-                  >
-                    {doc.name}
-                  </div>
-                </div>
+      <div className='h-auto grow overflow-auto'>
+        <div className="p-4 rounded-md scroll-smooth">
 
-                {expandedParents[doc.id] && doc.children && doc.children.length > 0 && renderDocuments(doc.children)}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <div>
-            {chronos === 'crescente' ? <ChronologicalView /> : <AntiChronologicalView />}
-          </div>
-        )}
+          {viewMode === 'tree' ? (
+            <ul>
+              {documents.map((doc) => (
+                <li key={doc.id} className="mb-2">
+                  <div className="flex items-center">
+                    <button
+                      onClick={() => toggleExpand(doc.id)}
+                      className="mr-1.5"
+                    >
+                      <FontAwesomeIcon
+                        icon={
+                          expandedParents[doc.id] ? faChevronDown : faChevronRight
+                        }
+                        className="text-gray-700 h-2.5 w-2.5 mb-[3.5px]"
+                      />
+                    </button>
+                    <input
+                      type="checkbox"
+                      checked={selectedDocuments.includes(doc.id)}
+                      onChange={() => handleCheckboxChange(doc.id)}
+                      className="mr-1.5"
+                    />
+                    <div
+                      className="text-sm text-[#3D4551] hover:underline cursor-pointer whitespace-nowrap pe-4"
+                    >
+                      {doc.name}
+                    </div>
+                  </div>
+
+                  {expandedParents[doc.id] && doc.children && doc.children.length > 0 && renderDocuments(doc.children)}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div>
+              {chronos === 'crescente' ? <ChronologicalView /> : <AntiChronologicalView />}
+            </div>
+          )}
+        </div>
       </div>
 
 

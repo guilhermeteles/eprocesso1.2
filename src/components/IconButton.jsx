@@ -18,7 +18,7 @@ export const IconButton = ({ icon, name, color, onClick, letter, textColor = '#F
   return (
     <button
       onClick={onClick}
-      className="w-8 h-8 rounded-md focus:outline-none flex justify-center items-center transition-colors"
+      className="w-8 h-8 rounded-md focus:outline-none flex justify-center items-center transition-colors font-medium"
       style={{ backgroundColor: color }}
       title={name}
       aria-label={name}
