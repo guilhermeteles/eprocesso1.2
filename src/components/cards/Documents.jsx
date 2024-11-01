@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronDown,
   faChevronRight,
+  faMagnifyingGlass,
   faStream,
   // faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons';
@@ -681,29 +682,37 @@ const ChronologicalView = () => {
 
   return (
     <div className="rounded-lg overflow-hidden flex flex-col h-full w-full">
-      <div className='pt-4 px-4 border-b border-[#EDEFF0]'>
-        <div className="flex justify-between items-center mb-4">
-        
-          {viewMode === 'tree' && (
-            <div className="items-center flex justify-between text-xs gap-4">
+      <div className='border-b border-[#EDEFF0] px-4 py-2'>
 
+        <div className="flex justify-between items-center">
+
+          {viewMode === 'tree' && (
+            <div className="items-center flex justify-between text-xs gap-2">
+              <FontAwesomeIcon
+                icon={faMagnifyingGlass}
+                className="cursor-pointer text-md text-blue-500 mt-0.5 me-2"
+
+              />
               <button
                 className="text-blue-500 underline hover:text-blue-700"
                 onClick={contractAll}
               >
-                Contrair Tudo
+                Contrair
               </button>
               <button
                 className="text-blue-500 underline hover:text-blue-700"
                 onClick={expandAll}
               >
-                Expandir Tudo
+                Expandir
               </button>
             </div>
           )}
           {viewMode === 'chronological' && (
-            <div className="items-center flex justify-between text-xs gap-4">
-
+            <div className="items-center flex justify-between text-xs gap-2">
+              <FontAwesomeIcon
+                icon={faMagnifyingGlass}
+                className="cursor-pointer text-md text-blue-500 mt-0.5 me-2"
+              />
               <button
                 className="text-blue-500 underline hover:text-blue-700"
                 onClick={showChronologicalView}
@@ -718,9 +727,9 @@ const ChronologicalView = () => {
               </button>
             </div>
           )}
-       
+
           {/* <h2 className="text-md font-medium text-[#3D4551]">Documentos</h2> */}
-        
+
           <div className="flex items-center space-x-1 mt-1">
             <FontAwesomeIcon
               icon={faStream}
@@ -742,14 +751,14 @@ const ChronologicalView = () => {
               onClick={toggleViewMode}
             />
           </div>
-          
+
         </div>
-        
+
       </div>
 
       {/* Document List */}
       <div className='h-auto grow overflow-auto'>
-        <div className="p-4 rounded-md scroll-smooth">
+        <div className="py-4 px-2 rounded-md scroll-smooth">
 
           {viewMode === 'tree' ? (
             <ul>

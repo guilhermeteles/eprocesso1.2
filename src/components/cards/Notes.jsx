@@ -2,8 +2,8 @@ import Note from '../Note'
 
 export default function Notes() {
     return (
-        <div className="w-full h-full p-6 flex flex-col gap-6 overflow-y-auto">
-            <h2>Notas Ativas</h2>
+        <div className="w-full h-full p-4 flex flex-col gap-6 overflow-y-auto">
+            {/* <h2 className=''>Notas Ativas</h2> */}
             <div className='flex flex-col gap-4'>
                 <Note 
                 author='Nota Usuário'

@@ -80,11 +80,11 @@ const darkenHexColor = (hex, amount) => {
 const IconBadge = ({ icon, text, color }) => {
   return (
     <div 
-      className="flex items-center gap-2 px-2 pb-0.5 rounded-md text-sm"
+      className="h-full flex items-center gap-2 px-2 pb-0.5 rounded-md text-sm"
       style={{ backgroundColor: color }}
     >
       <span style={{ color: darkenHexColor(color, 0.2) }}>{icon}</span>
-      <span className="text-gray-700 text-xs">{text}</span>
+      <span className="text-gray-700 text-xs leading-none">{text}</span>
     </div>
   );
 };

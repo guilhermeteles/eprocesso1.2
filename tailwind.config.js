@@ -1,4 +1,4 @@
-export default {
+module.exports= {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Rawline', 'sans-serif'],//'Noto Sans'
+        sans: ['Rawline', 'sans-serif'],
       },
     },
   },

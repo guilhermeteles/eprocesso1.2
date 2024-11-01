@@ -37,7 +37,7 @@ export default function MainMenu() {
 
  
     return (
-        <div className="w-full h-full flex items-center justify-between p-4">
+        <div className="w-full h-full flex items-center justify-between px-4">
             <div className="flex gap-6 items-center overflow-auto">
                 {/* Grupo 1 */}
                 <div className="flex flex-col">
