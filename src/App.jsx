@@ -32,11 +32,11 @@ export default function App() {
           <div className="col-span-1 row-span-4 bg-white rounded-lg">
               <CustomKeyWord />
           </div>
-          <div className="col-span-1 row-span-3 bg-white rounded-lg">
-              <ReuniaoJulgamento />
-          </div>
-          <div className="col-span-1 row-span-2 bg-white rounded-lg">
+          <div className="col-span-1 row-span-3 bg-white rounded-lg p-4 overflow-auto">
               <Pendencias />
+          </div>
+          <div className="col-span-1 row-span-2 bg-white rounded-lg p-4 overflow-auto">
+             <ReuniaoJulgamento />
           </div>
       </div>
   )

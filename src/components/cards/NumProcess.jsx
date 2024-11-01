@@ -19,7 +19,7 @@ export default function NumProcess() {
       };
       const [copied, setCopied] = useState(false);
     const [isFavorited, setIsFavorited] = useState(false);
-    const NameDisplay = ({ name, children }) => {
+    const NameDisplay = ({ name, children, size = "xs" }) => {
         const [copied, setCopied] = useState(false);
     
         const handleClick = async () => {
@@ -37,10 +37,14 @@ export default function NumProcess() {
     
         return (
             <div className='flex items-center'>
-                <span className="font-bold uppercase text-xs me-2">{name}</span>
+                {name && (
+                    <span className={`font-bold uppercase text-${size} me-2`}>
+                        {name}
+                    </span>
+                )}
                 <div
                     onClick={handleClick}
-                    className={`flex items-center cursor-pointer w-fit py-1 px-2 rounded-md transition-colors ${
+                    className={`flex items-center cursor-pointer w-fit py-1 px-2 rounded-md transition-colors text-${size} ${
                         copied ? 'bg-green-200 text-green-600' : 'bg-gray-50 text-regular'
                     }`}
                 >
@@ -53,11 +57,12 @@ export default function NumProcess() {
         );
     };
     
+    
     return (
         <div className="w-full h-full grid grid-cols-2 overflow-auto items-center">
             <div className="space-y-2 m-auto w-full h-full">
                 <div className="flex w-full h-full rounded-md px-">
-                    <div className="flex flex-col w-full h-full items-center">
+                    <div className="flex flex-col w-full h-full items-center px-4">
                         <div className='flex gap-2 w-full h-full -ms-0.5'>
                             <button onClick={toggleFavorite} >
                                 <FontAwesomeIcon
@@ -66,7 +71,7 @@ export default function NumProcess() {
                                     className="cursor-pointer text-sm"
                                 />
                             </button>
-                            <NameDisplay name="Processo">
+                            <NameDisplay name="" size="xl">
                                 {processoNumber}
                             </NameDisplay>
                             {/* <button
@@ -81,34 +86,31 @@ export default function NumProcess() {
                                 )}
                             </button> */}
                         </div>
-                        <div className='w-full h-full items-center flex'>
+                        <div className='w-full h-full items-start flex flex-col gap-1'>
                             <NameDisplay name="Nome">
                                 Joana Nogueira Martins
                             </NameDisplay>
-                        </div>
-                        <div className='w-full h-full  items-center flex'>
                             <NameDisplay name="NI">
                                 123.456.789-01
                             </NameDisplay>
                         </div>
+                   
                     </div>
                     
                 </div>
 
             </div>
             <div className="space-y-2 m-auto w-full h-full p-2">
-                <div className="flex flex-col w-full h-full rounded-md border px-3">
-                    <div className='w-full h-full items-center flex'>
+                <div className="flex flex-col w-full h-full rounded-md bg-gray-50 px-3">
+                    <div className='w-full h-full items-start flex flex-col gap-1 justify-center p-2'>
                         <NameDisplay name="Situação SIEF-Processos">
                             Pendente
                         </NameDisplay>
-                    </div>
-                    <div className='w-full h-full items-center flex'>
+              
                         <NameDisplay name="Nível de Sigilo Interno">
                             Básico
                         </NameDisplay>
-                    </div>
-                    <div className='w-full h-full items-center flex'>
+
                         <NameDisplay name="Nível de Sigilo Externo">
                             Básico
                         </NameDisplay>

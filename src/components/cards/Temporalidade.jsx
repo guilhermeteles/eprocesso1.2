@@ -6,9 +6,9 @@ const stats = [
 
 export default function Temporalidade() {
     return (
-        <div className="flex flex-col h-full w-full rounded-lg">
+        <div className="flex flex-col h-full w-full rounded-lg ">
             {/* <h2>Dias em Posse</h2> */}
-            <div className="flex text-center divide-x h-full ">
+            <div className="flex text-center divide-x divide-gray-100 h-full bg-white rounded-md">
 
                 {stats.map((item) => (
                     <div key={item.name} className="w-full h-full flex items-center">
